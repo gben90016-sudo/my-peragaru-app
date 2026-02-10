@@ -29,7 +29,8 @@ if st.button('分析開始'):
         df = yf.download(ticker, period=f'{days}d')
 
         # 最新の終値を表示
-        latest_price = df['Close'].iloc[-1]
+        # 修正後（これをコピペ！）
+latest_price = float(df['Close'].iloc[-1])
         st.metric(label="現在の株価", value=f"{latest_price:.1f} 円")
 
         # チャートを描く（これだけでインタラクティブなグラフになります）
